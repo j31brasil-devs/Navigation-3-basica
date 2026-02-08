@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.jeidevs.mylenguaje.navigation.BasicNavigationWrapper
 import com.jeidevs.mylenguaje.ui.theme.MyLenguajeTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +20,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyLenguajeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Jeison",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                BasicNavigationWrapper()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name! tu puedes",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyLenguajeTheme {
-        Greeting("Android")
     }
 }
